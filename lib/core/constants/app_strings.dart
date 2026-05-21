@@ -35,8 +35,8 @@ class AppStrings {
   static const String resumeNotLoaded = 'Резюме пока не загружено';
 
   // ── Assets ───────────────────────────────────────────────────────────────
-  static const String avatarAsset = 'user-files/avatar.jpg';
-  static const String resumeAsset = 'user-files/resume.pdf';
-  static const String logoAsset = 'user-files/logo.png';
-  static const String logoBlueAsset = 'user-files/logo-blue.png';
+  static const String avatarAsset = 'assets/images/avatar.jpg';
+  static const String resumeAsset = 'assets/documents/resume.pdf';
+  static const String logoAsset = 'assets/images/logo.png';
+  static const String logoBlueAsset = 'assets/images/logo-blue.png';
 }
