@@ -12,7 +12,7 @@
 
 > APK собирается автоматически через GitHub Actions при каждом пуше в `main` и публикуется в [Releases](https://github.com/xx-arteeem-xx/flatter-lab-2/releases).
 
----
+--- 
 
 ## О приложении
 
