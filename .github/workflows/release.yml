@@ -37,7 +37,9 @@ jobs:
       # flutter create . fills in gradle-wrapper.jar, mipmap icons, gradlew
       # without overwriting our committed custom files (build.gradle, etc.)
       - name: Generate Android boilerplate (missing binary files)
-        run: flutter create . --platforms android --project-name flatter_lab_2
+        run: |
+          flutter create . --platforms android --project-name flatter_lab_2
+          rm -f android/build.gradle.kts android/app/build.gradle.kts android/settings.gradle.kts
 
       # ── 5. Make gradlew executable ────────────────────────────────────────
       - name: Make gradlew executable
