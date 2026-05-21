@@ -39,7 +39,7 @@ jobs:
       - name: Generate Android boilerplate (missing binary files)
         run: |
           flutter create . --platforms android --project-name flatter_lab_2
-          rm -f android/build.gradle.kts android/app/build.gradle.kts android/settings.gradle.kts
+          rm -f android/app/build.gradle.kts
 
       # ── 5. Make gradlew executable ────────────────────────────────────────
       - name: Make gradlew executable
