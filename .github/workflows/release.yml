@@ -76,15 +76,15 @@ jobs:
 
       # ── 12. Rename APK for stable download URL ────────────────────────────
       - name: Rename APK
-        run: cp build/app/outputs/flutter-apk/app-release.apk app-release.apk
+        run: cp build/app/outputs/flutter-apk/app-release.apk user-profile-v1.apk
 
       # ── 13. Publish to GitHub Releases ────────────────────────────────────
-      # Stable URL: /releases/latest/download/app-release.apk
+      # Stable URL: /releases/latest/download/user-profile-v1.apk
       - name: Create GitHub Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release create "v1.0.${{ github.run_number }}" \
-            app-release.apk \
+            user-profile-v1.apk \
             --title "Release v1.0.${{ github.run_number }}" \
-            --notes "$(printf 'Автоматическая сборка из коммита %s\n\n**Скачать APK:** [app-release.apk](https://github.com/${{ github.repository }}/releases/latest/download/app-release.apk)' '${{ github.sha }}')"
+            --notes "$(printf 'Автоматическая сборка из коммита %s\n\n**Скачать APK:** [user-profile-v1.apk](https://github.com/${{ github.repository }}/releases/latest/download/user-profile-v1.apk)' '${{ github.sha }}')"
