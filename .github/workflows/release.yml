@@ -62,23 +62,27 @@ jobs:
       - name: Flutter pub get
         run: flutter pub get
 
-      # ── 9. Static analysis ────────────────────────────────────────────────
+      # ── 9. Generate launcher icons ────────────────────────────────────────
+      - name: Generate launcher icons
+        run: dart run flutter_launcher_icons
+
+      # ── 10. Static analysis ───────────────────────────────────────────────
       - name: Flutter analyze
         run: flutter analyze --no-fatal-infos
 
-      # ── 10. Unit & widget tests ───────────────────────────────────────────
+      # ── 11. Unit & widget tests ───────────────────────────────────────────
       - name: Flutter test
         run: flutter test
 
-      # ── 11. Build signed release APK ─────────────────────────────────────
+      # ── 12. Build signed release APK ─────────────────────────────────────
       - name: Build release APK
         run: flutter build apk --release
 
-      # ── 12. Rename APK for stable download URL ────────────────────────────
+      # ── 13. Rename APK for stable download URL ────────────────────────────
       - name: Rename APK
         run: cp build/app/outputs/flutter-apk/app-release.apk user-profile-v1.apk
 
-      # ── 13. Publish to GitHub Releases ────────────────────────────────────
+      # ── 14. Publish to GitHub Releases ────────────────────────────────────
       # Stable URL: /releases/latest/download/user-profile-v1.apk
       - name: Create GitHub Release
         env:
